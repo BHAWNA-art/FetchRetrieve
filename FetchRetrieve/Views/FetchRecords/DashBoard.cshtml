@@ -1,0 +1,68 @@
+﻿@model FetchRetreive.Models.Uploadfile
+@{
+    ViewBag.Title = "DashBoard";
+}
+<link href="~/css/StyleSheet1.css" rel="stylesheet" />
+
+<section class="container ">
+    <div class="row">
+        <div class="col-lg-6 col-lg-offset-3 text-center">
+            <section id="loginForm">
+
+                @using (Html.BeginForm("DashBoard", "FetchRecords", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                <form>
+                    <section class="row ">
+                        <section class="col-12 col-sm-12 col-md-12">
+                            <legend><h2><b>Upload And Download:</b></h2></legend>
+                        </section>
+                    </section>
+
+                    <section class="table-bordered">
+                        <section class="row">
+
+                            <div class="form-group">
+                                <div class="col-md-4">
+                                    <legend>Upload Excel<span class="text-danger">*</span></legend>
+                                </div>
+                                <div class="col-md-11"></div>
+                            </div>
+                            <div class="container-fluid">
+                                <div class="form-group">
+                                    <div class="form-horizontal">
+                                        <div class="col-md-6 p-0 m-0">
+                                            @Html.TextBoxFor(m => m.Excelfile, new { type = "file", @class = "form-control" })
+                                            @Html.ValidationMessageFor(m => m.Excelfile, "", new { @class = "text-danger" })
+                                        </div>
+
+                                        <div class="col-md-2">
+                                            <button type="submit" class="btn btn-success">Save</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <br />
+                        <br />
+                    </section>
+                   </form>
+                
+
+                                @*<section class="container-fluid col-12 col-sm-6 col-md-3">
+            <div class=" clearfix ">
+                <input type="text" class="form-control col-2" placeholder="path" />
+                <button type="button" class="btn btn-secondary col-2">Upload</button>
+                <button type="button" class="btn btn-success col-2">Save</button>
+            </div><br /><br />
+
+            <div class="form-group col-12">
+                <button type="button" class="btn btn-primary col-2">Download</button>
+            </div>
+        </section>*@
+                 
+                }
+            </section>
+        </div>
+    </div>
+</section>
+
